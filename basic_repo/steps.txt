@@ -1,0 +1,85 @@
+paulmaclachlan@MBA PMac (master)$ ls
+README.md		alternateFile.txt	otherFile.txt
+aboutMe.md		basic_repo
+aboutMe.txt		file.txt
+paulmaclachlan@MBA PMac (master)$ cd basic_repo/
+paulmaclachlan@MBA basic_repo $ ls
+paulmaclachlan@MBA basic_repo $ cd ..
+paulmaclachlan@MBA PMac (master)$ mv file.txt otherFile.txt alternateFile.txt basic_repo/
+paulmaclachlan@MBA PMac (master)*$ ls
+README.md	aboutMe.md	aboutMe.txt	basic_repo
+paulmaclachlan@MBA PMac (master)*$ cd basic_repo/
+paulmaclachlan@MBA basic_repo *$ ls
+alternateFile.txt	file.txt		otherFile.txt
+paulmaclachlan@MBA basic_repo *$ git init
+Reinitialized existing Git repository in /Users/paulmaclachlan/Desktop/CodingDojoGIT/PMac/basic_repo/.git/
+paulmaclachlan@MBA basic_repo *$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	alternateFile.txt
+	file.txt
+	otherFile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+paulmaclachlan@MBA basic_repo *$ git checkout -b master
+Switched to a new branch 'master'
+paulmaclachlan@MBA basic_repo *$ git add .
+paulmaclachlan@MBA basic_repo *$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   alternateFile.txt
+	new file:   file.txt
+	new file:   otherFile.txt
+
+paulmaclachlan@MBA basic_repo *$ git commit -m "initial commit"
+[master (root-commit) c5a5456] initial commit
+ 3 files changed, 1 insertion(+)
+ create mode 100644 alternateFile.txt
+ create mode 100644 file.txt
+ create mode 100644 otherFile.txt
+paulmaclachlan@MBA basic_repo (master)$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+paulmaclachlan@MBA basic_repo (master)$ git remote
+paulmaclachlan@MBA basic_repo (master)$ git remotes
+git: 'remotes' is not a git command. See 'git --help'.
+
+Did you mean this?
+	remote
+paulmaclachlan@MBA basic_repo (master)$ git remote -v
+paulmaclachlan@MBA basic_repo (master)$ git remote add basic_repo
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=<push|fetch>]
+                          set up remote as a mirror to push to or fetch from
+
+paulmaclachlan@MBA basic_repo (master)$ git remote add origin https://github.com/PaulMacLachlan/Basic_Repo.git
+paulmaclachlan@MBA basic_repo (master)$ git push -u origin master
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 292 bytes | 0 bytes/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/PaulMacLachlan/Basic_Repo.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+paulmaclachlan@MBA basic_repo (master)$
