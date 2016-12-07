@@ -1,0 +1,17 @@
+#top_section {
+    background-color: #265175;
+}
+#footer_section {
+    background: linear-gradient(to top, #3675A9, #265175);
+}
+#left_middle, #right_middle {
+    border-style: solid;
+    border-width: 4px, 0px, 0px, 0px;
+    border-color: #3675A9;
+}
+
+#search_field {
+    background-color: #444444;
+    width: 200px;
+    height: 30px;
+}
