@@ -1,17 +1,131 @@
+html {
+    font-family: sans-serif;
+}
+
+#wrapper p {
+    color: #dce6ee;
+}
+
 #top_section {
     background-color: #265175;
+    width: 800px;
 }
-#footer_section {
-    background: linear-gradient(to top, #3675A9, #265175);
+
+#top_section p {
+    vertical-align: top;
 }
+
 #left_middle, #right_middle {
+    display: inline-block;
+    text-align: center;
+    width: 400px;
     border-style: solid;
-    border-width: 4px, 0px, 0px, 0px;
-    border-color: #3675A9;
+    border-width: 4px 0px 0px 0px;
+    border-color: #3675A9
+}
+#blacktext1, #blacktext2 {
+    color: #000102;
+}
+
+#bullet_lists1, #bullet_lists2 {
+    list-style-type: square;
+}
+
+#bullet_lists1, #bullet_lists2 li {
+    color: #81afd6;
+    font-size: 12px;
+}
+
+#mainlinks {
+    text-align: center;
+    margin: 40px;
+    width: 150px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#mainlinks li {
+    color: #aa9f55;
+    background-color: inherit;
+    line-height: 1.5;
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+#mainlinks li a {
+    color: white;
+}
+
+#main_body_text {
+    display: inline-block;
+    width: 60%;
+    font-size: : 8px;
+    text-align: center;
+    vertical-align: top;
+    margin: 20px;
 }
 
 #search_field {
     background-color: #444444;
-    width: 200px;
+    text-align: center;
+    margin: 50px auto;
+    display: inline-block;
+    width: 180px;
     height: 30px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#button {
+    position: relative;
+    padding: 6px 15px;
+}
+
+#pythonlogo {
+    display: inline-block;
+    width: 300px;
+}
+
+#nav {
+    margin: 0 auto ;
+    background-color: #487eab;
+    width: 90%;
+    height: 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px 0;
+}
+
+#menubar li {
+    display: inline-block;
+    padding: 10px;
+    color: #aac4d8;
+    /*width: 80%*/
+    /*box-shadow: 5px;*/
+}
+
+#textsize {
+    display: inline-block;
+}
+
+.zen {
+    font-style: italic;
+    text-align: center;
+    color: #aa9f55;
+    line-height: 1.5;
+}
+
+#middle_body_elements {
+    display: inline-block;
+    width: 60%;
+}
+
+#footer_section {
+    background: linear-gradient(to top, #3675A9, #265175);
+    margin: 0 auto;
+    list-style-type: none;
+    text-align: center;
+}
+
+p {
+    font-size: 12px;
 }
