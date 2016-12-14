@@ -1,3 +1,8 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
 #wrapper {
     width: 900px;
     height: 790px;
@@ -139,5 +144,8 @@ td img {
     color: white;
     font-weight: bold;
     padding: 5px;
+    /*display: inline-block;*/
+    /*height: auto;*/
+    margin-bottom: 30px;
 /*Why wont margin move the buttons in place?*/
 }
