@@ -9,3 +9,7 @@ printNum(1,255)
 
 
 arr[arr.length] = value;
+
+function functionName() {
+
+}
