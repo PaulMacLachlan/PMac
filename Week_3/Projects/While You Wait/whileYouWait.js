@@ -3,7 +3,7 @@ var daysUntil = 60;
 
 function BIRTHDAY(days)
 {
-    if (var daysUntil = 60; daysUntil > 30; daysUntil--){
+    if (i = 1; daysUntil > 30; daysUntil--){
     console.log(daysUntil + "Such a long time... :(");
     }
 
