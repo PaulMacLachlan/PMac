@@ -10,7 +10,7 @@
 #wrapper {
 	width: 730px;
 	height: 620px;
-	border: 1px dotted green;
+	/*border: 1px dotted green;*/
 }
 #globe-png {
 	width: 75px;
