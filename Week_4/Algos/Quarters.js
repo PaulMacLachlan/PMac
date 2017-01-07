@@ -1,11 +1,8 @@
 
-function slots(quarters){
-    for (var quarters = 0; quarters < ; i++) {
-        array[i]
-        console.log("Im here")
-    }
-        num--
-        console.log("Now Im here");
-        // console.log(Math.trunc(Math.random() * 50) + 51)
+function slots(num){
+    for (var turns = 0; turns > 0 ; turns--) {
+        num = (math.floor(math.random));
     }
 slots(10)
+// 1 quarter = 1 game
+// console.log(Math.trunc(Math.random() * 50) + 51)
