@@ -2,13 +2,13 @@
 
 function findAndPrintMax(arr){
 
-for (var i = 0; i < arr.length; i++) {
-    var max = arr[0]
-    while (arr[i] > max){
-        max = arr[i];
-        console.log("Max is now " + max);
+var max = arr[0]
+for (var idx = 0; idx < arr.length; idx++) {
+    if (arr[idx] > max){
+        max = arr[idx];
         }
     }
+    console.log("Max is now " + max);
 }
 
-findAndPrintMax([20,40,70,5,100,101,31,5])
+findAndPrintMax([20,40,70,5,50,101,31,5,401,301,2000,200,6])
