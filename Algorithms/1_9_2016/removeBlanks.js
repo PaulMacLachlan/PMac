@@ -1,13 +1,11 @@
 function removeBlanks(str){
-    var l = string.length - 1
-    for (var i = 0; i < l; i++) {
-        if (str[i] === '/ /') {
-            return;
-        }
-        else if (str[i] != '/ /') {
-            var newStr = str[i];
-        }
-        console.log(newStr)l;
+    var len = str.length - 1;
+    var newStr = "";
+    for (var i = 0; i <= len; i++){
+        if (str[i] != ' ' && str[i] != '\t'){
+            newStr = newStr + str[i];
         }
     }
+    return newStr;
 }
+console.log(removeBlanks("BO    B"));
