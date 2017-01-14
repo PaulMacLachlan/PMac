@@ -1,0 +1,62 @@
+#square {
+    width: 140px;
+    height: 140px;
+    background: blue;
+}
+
+#circle {
+    width: 140px;
+    height: 140px;
+    background: blue;
+    border-radius: 70px;
+    margin-top: 20px;
+}
+
+#arrow_up {
+    width: 0px;
+    height: 0px;
+    border-bottom: 100px solid blue;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+}
+
+#arrow_down {
+    width: 0px;
+    height: 0px;
+    margin-top: 20px;
+    border-top: 100px solid blue;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+}
+
+#arrow_right {
+    width: 0px;
+    height: 0px;
+    margin-top: 20px;
+    border-left: 100px solid blue;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+}
+
+#arrow_left {
+    width: 0px;
+    height: 0px;
+    margin-top: 20px;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-right: 100px solid blue;
+}
+
+#pacman {
+    width: 0px;
+    height: 0px;
+    margin-top: 20px;
+    border-top: 90px solid blue;
+    border-left: 90px solid blue;
+    border-bottom: 90px solid blue;
+    border-right: 90px solid transparent;
+    border-top-left-radius: 90px;
+    border-top-right-radius: 90px;
+    border-bottom-right-radius: 90px;
+    border-bottom-left-radius: 90px;
+}
