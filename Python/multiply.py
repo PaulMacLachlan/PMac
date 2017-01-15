@@ -9,9 +9,11 @@
 # Should print [10, 20, 50, 80 ].
 
 
-def multiply(list,num):
-    for i in list:
-        newList.append(i * num)
-        print newList
+def multiply(list,num): #defines the function to accept list and num params
+    newList = [] #declares our "new list"
+    for idx in list: #iterates over each item in the given list
+        newList.append(idx * num) #appends the multiplied data to the newList
+    print newList #prints our output
 
-multiply([2,4,10,16],5)
+# multiply([2,4,10,16],5)
+multiply([3,6,8,9],2)

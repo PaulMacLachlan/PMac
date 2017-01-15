@@ -16,5 +16,5 @@ students = [
 # Mark Guillen
 # KB Tonel
 
-for idx in range(len(students)):
-    print students[idx]['first_name''last_name']
+for idx in students:
+    print students #[idx].first_name, students.last_name

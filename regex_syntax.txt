@@ -1,0 +1,22 @@
+BASIC SYNTAX
+Ordinary characters
+* Escaping: "/"
+* Anything: "."
+* Start: "^"
+* End: "$"
+* Word characters: "\w", "\W"
+* Digit characters: "\d"
+* Boundaries and spaces: "\b", "\s"
+* Groups: "[a-zA-Z0-9]"
+* Repetitions: "*", "+", "?"
+* Capture groups: "()"
+* Naming themL "(?P)"
+
+PRACTICE
+* /users/238
+* /users/michael/description
+* cat in "thehandbagwrenchcatmegaphonecatastrophe"
+* words starting with a capical letter
+* words that end with "ly" [a-zA-Z]*ly[/s]?
+* words that sound like "ough"
+* http://regex.alf.nu
