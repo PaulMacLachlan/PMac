@@ -17,4 +17,5 @@ students = [
 # KB Tonel
 
 for idx in students:
-    print students #[idx].first_name, students.last_name
+    print students.first_name, students.last_name
+    #[idx].first_name, students.last_name

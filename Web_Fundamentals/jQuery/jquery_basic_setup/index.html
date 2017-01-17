@@ -7,9 +7,21 @@
         <script>
             $(document).ready(function(){//code within here only loads once the doc is finished loading!
                 //code will go here
-            console.log($('body').click(function() {
-                //code will go here
-                }));
+            $(document).on('click', 'button', function(){alert('you clicked a button!')});
+
+            $(document).ready(function(){
+            $('button').click(function(){
+                 $('div').append('<h3>I am a dynamically generated h3 </h3>');
+                });
+            $(document).on('click', 'h3', function(){
+                alert('You clicked me!');
+                    })
+                });
+
+
+            // console.log($('body').click(function() {
+            //     //code will go here
+            //     }));
             });
         </script>
     </head>

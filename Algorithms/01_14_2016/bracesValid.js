@@ -55,4 +55,4 @@ var ex3 = '()()(()))()(()' // Should eval TRUE, complex
 var ex4 = '()))))((()()))))(((()))((((((()())' // Should eval TRUE, very complex
 var ex5 = '()))))((()()))))(((()))((((((()(' // Should eval FALSE, very complex
 
-pVal(ex4)
+pVal(ex5)
