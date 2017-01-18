@@ -36,6 +36,7 @@ function pVal(str){
         }
 
     }
+    //Var DIFF >= 0
 
     /* console.log('SORTED:' + */storage.sort();
     console.log('Open Parens: ' + open + '\n' + 'Closed Parens: ' + close)
