@@ -11,8 +11,10 @@
         {% for x in range(0,5) %}
             <p> {{ x }} </p>
         {% endfor %}
+        <form action='/users' method='post'>
+            Name:<input type='text' name='name'>
+            Email:<input type='text' name='email'>
+        <input type='submit' value='Submit'>
+        </form>
     </body>
 </html>
-
-<!-- {{ some variable }}
-{% some expression %} -->
