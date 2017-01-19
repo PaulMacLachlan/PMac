@@ -9,4 +9,8 @@ def hello_world():
 def success():
     return render_template('success.html')
 
+@app.route('/hooray')
+def hooray():
+    return render_template('hooray.html')
+
 app.run(debug=True)
