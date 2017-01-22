@@ -11,10 +11,9 @@ function jsSlice(str, start, end) { //is this required to list the string in acc
 
         for (var i = start; i < l; i++) {
             slices += str[i]
-            // return slices;
             console.log(slices);
         }
     }
 }
 
-jsSlice('Hey there I like strings', 4, 9) //slicing really cool, but wrong lol
+jsSlice('Hey there I like them strings', 4, 9) //slicing really cool due to being in the loop, but wrong lol
