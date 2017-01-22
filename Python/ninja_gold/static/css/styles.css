@@ -1,0 +1,22 @@
+*{
+ margin: 0px;
+ padding: 0px;
+}
+
+#wrapper{
+ width: 800px;
+ height: 640px;
+ background-color: yellow;
+ margin: 0px auto;
+ overflow: hidden;
+ margin-top: 20px;
+}
+
+h1 {
+    color: blue;
+    display: block;
+    /*vertical-align: top;*/
+    position: relative;
+    margin-left: 100px;
+    margin-right: 100px;
+}
