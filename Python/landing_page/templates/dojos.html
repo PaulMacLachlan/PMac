@@ -3,10 +3,15 @@
     <head>
         <meta charset="utf-8">
         <title>Dojos New Page</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
         <h1>Dojos Page!</h1>
-        <form class="this_form" action="index.html" method="post">
+        <form action="http://localhost:5000/">
+            <input type="submit" value="Home" />
+        </form>
+        <form action="http://localhost:5000/ninjas.html">
+            <input type="submit" value="Ninjas!">
         </form>
     </body>
 </html>

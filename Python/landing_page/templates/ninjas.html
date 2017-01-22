@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Ninjas</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
         <h1> We Are Ninjas!</h1>
@@ -11,5 +12,11 @@
             <li>They are agile</li>
             <li>They release early and often</li>
         </ul>
+        <form action="http://localhost:5000/dojos.html">
+            <input type="submit" value="Dojos!" />
+        </form>
+        <form action="http://localhost:5000/">
+            <input type="submit" value="Home" />
+        </form>
     </body>
 </html>
