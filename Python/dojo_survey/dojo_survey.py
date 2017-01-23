@@ -5,8 +5,10 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/result')
+@app.route('/result', methods=['POST'])
 def resultPage():
-    return render_template('result.html')
+    print 'I\'m in the result page function'
+    print request.form
+    return render_template('result.html', data = request.form)
 
 app.run(debug=True)
