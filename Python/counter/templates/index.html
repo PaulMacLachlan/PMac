@@ -14,10 +14,24 @@
         </script>
         <link rel="stylesheet" type="text/css" href="static/css/style.css">
     </head>
+    <style media="screen">
+        #box {
+            width: 300px;
+            height: 300px;
+            background-color: #F7A65F;
+        }
+    </style>
     <body>
-        <h1>Counter {{ counter }}</h1>
-        <!-- <h1>User:</h1> -->
-        <!-- <h1>{{session['name']}}</h1> -->
-        <!-- <h1>{{session['email']}}</h1> -->
+        <div id="box">
+            <h1>Counter</h1>
+            <p>We've been here {{ session['counter'] }} times</p>
+        </div>
+        <form action="/reset" method="post">
+            <input type="submit" name="Reset" placeholder="Reset">RESET</input> <!-- not clear how to style buttons properly -->
+        </form>
+        <form action="/plusTwo" method="post">
+            <input type="submit" name="reset" placeholder="reset">+two</input>
+        </form>
+
     </body>
 </html>
