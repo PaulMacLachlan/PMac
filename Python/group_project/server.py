@@ -6,17 +6,27 @@ app.secret_key = 'secretsecret'
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+        try:
+            session['counter'] += 1
+        except:
+            session['counter'] = 1
+        return render_template('index.html')
+
 
 @app.route('/results', methods=['POST'])
 def results():
-    return render_template('results.html')
+    username = request.form['Username']
+    password = request.form['Password']
+    return render_template('results.html', username = username)
 
 @app.route('/dojos')
 def dojos():
-    print 'I MADE IT TO DOJOS FAM'
+    return render_template('dojos.html')
 
 app.run(debug=True)
+
+
+
 
 
 # https://vimeo.com/200739328/bd298321b0

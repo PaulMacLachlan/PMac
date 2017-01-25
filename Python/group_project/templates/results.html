@@ -5,6 +5,11 @@
         <title>Results Page</title>
     </head>
     <body>
-        <h1>THESE ARE RESULTS FAM</h1>
+        <h5>You've visited this page {{ session['counter'] }} times!</h5>
+
+        {% set length = 4 %}
+        {% if len(username) > length: %}
+        <p>{{ username }} is a long username</p>
+        {% endif %}
     </body>
 </html>
