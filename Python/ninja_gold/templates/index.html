@@ -2,22 +2,68 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>hello flask!</title>
+        <title>Ninja Gold</title>
+        <style media="screen">
+            .box {
+                display: inline-block;
+                margin-left: 60px;
+                padding: 30px;
+                background-color: gold;
+                width: 200px;
+                height: 200px;
+                border: 1px solid black;
+                border-radius: 20px;
+            }
+        </style>
+        <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+            <!-- Optional theme -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </head>
     <body>
-        <!-- <p>Hello Flask!</p>
-        <p>my name is {{ name }}</p>
-        <p>Lets say something like <h1>{{ phrase }}</h1> world</p>
-        {% for x in range(0,5) %}
-            <p> {{ x }} </p>
-        {% endfor %} -->
-        <form action='/' method="post">
-            Name:<input type="submit" name="Find Gold!">
-        <form action='/' method="post">
-            Name:<input type="submit" name="Find Gold!">
-        <form action='/' method="post">
-            Name:<input type="submit" name="Find Gold!">
-        <form action='/' method="post">
-            Name:<input type="submit" name="Find Gold!">
+        <div id=wrapper>
+            <h1>Ninja Gold</h1>
+            <br>
+                <p>Your Gold: {{ session['current_gold'] }}</p>
+            <br>
+            <div class="box">   <!-- FARM -->
+                <h2>Farm</h2>
+                <p>(earns 10-20 golds)</p>
+                <form action='/process_money' method="post">
+                    <input type="hidden" name="farm" value="farm" />
+                    <input type="submit" name="Find Gold!" value="Find Gold!">
+                </form>
+            </div>
+            <div class="box">   <!-- CAVE -->
+                <h2>Cave</h2>
+                <p>(earns 5-10 golds)</p>
+                <form action='/process_money' method="post">
+                    <input type="hidden" name="cave" value="farm" />
+                    <input type="submit" name="Find Gold!" value="Find Gold!">
+                </form>
+            </div>
+            <div class="box">   <!-- HOUSE -->
+                <h2>House</h2>
+                <p>(earns 2-5 golds)</p>
+                <form action='/process_money' method="post">
+                    <input type="hidden" name="house" value="farm" />
+                    <input type="submit" name="Find Gold!" value="Find Gold!">
+                </form>
+            </div>
+            <div class="box">   <!-- CASINO -->
+                <h2>Casino</h2>
+                <p>(earns 0-50 golds)</p>
+                <form action='/process_money' method="post">
+                    <input type="hidden" name="casino" value="farm" />
+                    <input type="submit" name="Find Gold!" value="Find Gold!">
+                </form>
+            </div>
+            <h2>Activities:</h2>
+            <textarea name="name" rows="8" cols="80">{{ session['activities'] }}</textarea>
+        </div>
     </body>
 </html>
