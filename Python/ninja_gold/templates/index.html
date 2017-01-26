@@ -34,15 +34,18 @@
                 <h2>Farm</h2>
                 <p>(earns 10-20 golds)</p>
                 <form action='/process_money' method="post">
-                    <input type="hidden" name="farm" value="farm" />
+                    <input type="hidden" name="building" value="farm" />
                     <input type="submit" name="Find Gold!" value="Find Gold!">
+                    {% if submit %}
+                        {{'current_gold'}}
+                    {% endif %}
                 </form>
             </div>
             <div class="box">   <!-- CAVE -->
                 <h2>Cave</h2>
                 <p>(earns 5-10 golds)</p>
                 <form action='/process_money' method="post">
-                    <input type="hidden" name="cave" value="cave" />
+                    <input type="hidden" name="building" value="cave" />
                     <input type="submit" name="Find Gold!" value="Find Gold!">
                 </form>
             </div>
@@ -50,7 +53,7 @@
                 <h2>House</h2>
                 <p>(earns 2-5 golds)</p>
                 <form action='/process_money' method="post">
-                    <input type="hidden" name="house" value="house" />
+                    <input type="hidden" name="building" value="house" />
                     <input type="submit" name="Find Gold!" value="Find Gold!">
                 </form>
             </div>
@@ -58,7 +61,7 @@
                 <h2>Casino</h2>
                 <p>(earns 0-50 golds)</p>
                 <form action='/process_money' method="post">
-                    <input type="hidden" name="casino" value="casino" />
+                    <input type="hidden" name="building" value="casino" />
                     <input type="submit" name="Find Gold!" value="Find Gold!">
                 </form>
             </div>
