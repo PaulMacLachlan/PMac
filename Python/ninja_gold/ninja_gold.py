@@ -1,5 +1,6 @@
 from flask import Flask, render_template, session, flash, redirect, request
 import random
+import datetime
 
 app = Flask(__name__)
 app.secret_key = 'secretkeysarethebest' #resets session!!!
@@ -11,47 +12,53 @@ def ninjaGold():
         session['current_gold'] = 0
     if not 'activities' in session:
         session['activities'] = []
+        # print type(session['activities'])
     return render_template('index.html')
 
 @app.route('/process_money', methods=['POST'])
 def process():
-    print request.form
+    # print request.form
 
     if request.form['building'] == 'farm':
-        print "You chose Farm!"
         gold = random.randint(10,20)
-        print "you won",gold,"gold!"
         session['current_gold'] = session['current_gold'] + gold
-        print "we updated gold!"
-        print "total gold is now",session['current_gold'],"!"
+        activity_text = "You earned",gold,"from the Farm!",datetime.datetime.now()
+        print datetime.datetime.now()
+        session['activities'].append(activity_text)
+        # print type(session['activities'])
+        # print session['activities']
         return redirect('/')
 
     elif request.form['building'] == 'cave':
-        print "You chose Cave!"
         gold = random.randint(5,10)
-        print "you won",gold,"gold!"
         session['current_gold'] = session['current_gold'] + gold
-        print "we updated gold!"
-        print "total gold is now",session['current_gold'],"!"
+        activity_text = "You earned",gold,"from the Cave!",datetime.datetime.now()
+        print datetime.datetime.now()
+        session['activities'].append(activity_text)
         return redirect('/')
 
     elif request.form['building'] == 'house':
-        print "You chose House!"
         gold = random.randint(2,5)
-        print "you won",gold,"gold!"
         session['current_gold'] = session['current_gold'] + gold
-        print "we updated gold!"
-        print "total gold is now",session['current_gold'],"!"
+        activity_text = "You earned",gold,"from the House!",datetime.datetime.now()
+        print datetime.datetime.now()
+        session['activities'].append(activity_text)
         return redirect('/')
 
     elif request.form['building'] == 'casino':
-        print "You chose Casino!"
         gold = random.randint(-50,50)
-        print "you won",gold,"gold!"
         session['current_gold'] = session['current_gold'] + gold
-        print "we updated gold!"
-        print "total gold is now",session['current_gold'],"!"
+        activity_text = "You earned",gold,"from the Cave!",datetime.datetime.now()
+        print datetime.datetime.now()
+        session['activities'].append(activity_text)
         return redirect('/')
+
+
+@app.route('/secret_reset', methods = ['POST'])
+def secretReset():
+    session.clear()
+    return redirect('/')
+
 
 app.run(debug=True)
 # source venv/bin/activate
