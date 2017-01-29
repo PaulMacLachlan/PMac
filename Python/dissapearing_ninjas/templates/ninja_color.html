@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja Color</title>
+    </head>
+    <body>
+        <h1>{{ ninja_color }}</h1>
+        {% if ninja %}
+        <img src="static/images/Ninjas/{{ ninja }}" alt="Ninjas R Us">
+        {% elif ninjas %}
+        {% for n in ninjas %}
+        <form action="/ninja/{{ n }}" method="post">
+            <input type="submit" name="" value="{{ ninjas[n] }}">
+        </form>
+        {% endfor %}
+        {% endif %}
+    </body>
+</html>
