@@ -62,14 +62,14 @@
                     <input type="submit" name="Find Gold!" value="Find Gold!">
                 </form>
             </div>
-            <h2>Reset:</h2>
+            <h2>Reset:</h2> <!-- resets cookies -->
             <form action='/secret_reset' method="post">
                 <input type="submit" name="Reset!" value="Reset!">
             </form>
             <h2>Activities:</h2>
             <div>
                 {% for activity in session['activities']  %}
-                <p>{{ activity }}</p>
+                <p>{{ activity }}</p> <!-- still displaying incorrectly, must address, likely due to how the array/list 'session_activities' is being displayed. -->
                 {% endfor %}
             </div>
         </div>
