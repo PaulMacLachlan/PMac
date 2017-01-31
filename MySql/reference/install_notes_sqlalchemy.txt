@@ -1,0 +1,4 @@
+FOR Mac users:
+(flaskMySQL) brew install mysql-connector-c
+(flaskMySQL) pip install MySQL-python
+(flaskMySQL) pip install Flask-SQLAlchemy 

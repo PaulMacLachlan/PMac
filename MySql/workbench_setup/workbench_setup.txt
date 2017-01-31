@@ -1,0 +1,18 @@
+SELECT * FROM cities;
+
+SELECT name
+FROM cities
+WHERE id = 2 OR id = 3;
+
+SELECT * FROM countries
+WHERE code;
+
+SELECT countries.capital, countries.continent, cities.name, cities.population
+FROM countries, cities;
+
+COULD NOT GET USE [world] to work in my queries?
+
+example:
+
+Use [world] SELECT countries.capital, countries.continent, cities.name, cities.population
+FROM countries, cities;
