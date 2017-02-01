@@ -27,12 +27,14 @@
     </head>
     <body>
         <h1>User Registration</h1>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        {% for message in messages %}
-        <p style="color:red;">{{message}}</p>
-        {% endfor %}
-        {% endif %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
         {% endwith %}
         <div class="wrapper">
             <form action="/" method="POST">
@@ -59,7 +61,7 @@
 
 
 
-<!-- 
+<!--
 To flash a message with a different category, just use the second argument to the flash() function:
 
 flash(u'Invalid password provided', 'error')
