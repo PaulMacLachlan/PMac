@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Friends</title>
+                    <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+            <!-- Optional theme -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+            </script>
+    </head>
+    <body>
+        <!-- we can use the line below to see all of our data in our template -->
+        <!-- {{ all_friends }} -->
+        <h1>These are all my friends!</h1>
+        <!-- with all the data we can then construct a more structured output -->
+        {% for friend in all_friends: %}
+           <p>ID: {{ friend['id'] }}</p>
+           <p>First Name: {{ friend['first_name'] }}</p>
+           <p>Last Name: {{ friend['last_name'] }}</p>
+           <p>Occupation: {{ friend['occupation'] }}</p>
+           <hr>
+        {% endfor %}
+        <form action='/friends' method='POST'>
+          <label for="first_name">First Name:<input type="text" name="first_name" id="first_name"></label>
+          <label for="last_name">Last Name:<input type="text" name="last_name" id="last_name"></label>
+          <label for="occupation">Occupation:<input type="text" name="occupation" id="occupation"></label>
+          <input type="submit" value="Add">
+        </form>
+    </body>
+</html>
