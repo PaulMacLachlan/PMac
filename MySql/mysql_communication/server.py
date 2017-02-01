@@ -19,7 +19,7 @@ def create():
         'last_name': request.form['last_name'],
         'occupation': request.form['occupation']
     }
-    query = "INSERT INTO users (first_name, last_name, occupation, created_at, updated_at) VALUES (first_name, last_name, occupation, NOW(), NOW())"
+    query = "INSERT INTO friends (first_name, last_name, occupation, created_at, updated_at) VALUES (:first_name, :last_name, :occupation, NOW(), NOW())"
 
     print data;
     mysql.query_db(query, data)
