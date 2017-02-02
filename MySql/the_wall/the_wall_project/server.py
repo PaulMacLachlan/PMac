@@ -18,12 +18,13 @@ def index():
     # return the username for header
     return render_template('registration.html')
 
-@app.route('/logout')
+@app.route('/logout', methods=['POST'])
 def logOut():
+    print "we are redirecting to '/'!"
     return redirect('/')
 
-@app.route('/comments') #needs 'POST' method???
-def commentPage(id): #takes an ID???
+@app.route('/wall', methods=['POST']) #needs 'POST' method???
+def wall(): #takes an ID???
     #for displaying the comments page only?
     #has ability to reroute when new comments/messages update?
     return render_template('wall.html')
