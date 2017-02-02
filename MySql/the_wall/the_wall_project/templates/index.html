@@ -20,7 +20,7 @@
     body {
         background-color: #53B9EC;
     }
-    input, select {
+    input {
         width: 100px;
         margin: 0px;
         border: 1px solid grey;
@@ -29,7 +29,7 @@
     <body>
         <div class="header">
             <h3>CodingDojo Wall</h3>
-            <p>Welcome, {{ user_name }}!</p>
+            <p>Welcome, {{ first_name }}!</p>
             <form action="index.html" method="post">
                 <input type="submit" name="log_out" value="Log Out">
             </form>
@@ -37,8 +37,8 @@
             <div class="wrapper">
             <h1>Login and Registration</h1>
             <form class="" action="index.html" method="post">
-                Username:<input type="text" name="user_name" value="user_name" placeholder="User Name">
-                Password:<input type="text" name="" value="password" placeholder="Password">
+                Username:<input type="text" name="user_name" value="" placeholder="">
+                Password:<input type="text" name="" value="" placeholder="">
                 <br>
                 <br>
                 <br>
