@@ -7,3 +7,29 @@ Once you got the messages to show up (the wireframe on the left side), allow use
 
 Extra Credit I (optional): allow the user to delete his/her own message.
 Extra Credit II (optional): allow the user to delete his/her own message but only if the message was made in the last 30 minutes.
+
+front-end:
+
+registration template
+forum/display page is a redirection from registration to localhost:5000/wall
+
+create our page layout:
+1. Post a message field w submit (Post a message, blue button)
+2. H1 CodingDojo Wall
+3. comments attach to messages underneath (Post a comment Green button)
+4. registration page first :'localhost:5000/'
+5. messages are displayed most recent first (timestamp)
+6. Comments are displayed oldest first (timestamp)
+
+
+Python:
+
+server.py
+mysqlconnector.py
+
+DB:
+
+messages table
+comments table
+users table
+
