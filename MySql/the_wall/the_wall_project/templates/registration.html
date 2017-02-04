@@ -43,32 +43,22 @@
             </form>
         </div>
         <h1>User Registration</h1>
-        {% with messages = get_flashed_messages(with_categories=true) %}
-          {% if messages %}
-            <ul class=flashes>
-            {% for category, message in messages %}
-              <li class="{{ category }}">{{ message }}</li>
-            {% endfor %}
-            </ul>
-          {% endif %}
-        {% endwith %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<ul class=flashes>
+{% for category, message in messages %}
+<li class="{{ category }}">{{ message }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
         <div class="wrapper">
             <form action="/register" method="POST">
-                First Name: <input type="text" name="first_name" value="" placeholder="First Name">
-                <br>
-                <br>
-                Last Name: <input type="text" name="last_name" value="" placeholder="Last Name">
-                <br>
-                <br>
-                Email: <input type="text" name="email" value="" placeholder="Email Address">
-                <br>
-                <br>
-                Password: <input type="text" name="password" value ="" placeholder="Password">
-                <br>
-                <br>
-                Confirm Password: <input type="text" name="confirm_password" value="" placeholder="Confirm Password">
-                <br>
-                <br>
+                First Name: <input type="text" name="first_name" value="" placeholder="First Name"><br>
+                Last Name: <input type="text" name="last_name" value="" placeholder="Last Name"><br>
+                Email: <input type="text" name="email" value="" placeholder="Email Address"><br>
+                Password: <input type="text" name="password" value ="" placeholder="Password"><br>
+                Confirm Password: <input type="text" name="confirm" value="" placeholder="Confirm Password"><br>
                 <input type="submit" name="submit" value="Submit"/>
             </form>
         </div>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>the Wall</title>
+    </head>
+    <body>
+        <h1>the Wall</h1>
+        <!-- post a message -->
+        <!-- show username, timestamp -->
+        <form action="/message" method="post">
+            <textarea name="message" rows="8" cols="80"></textarea>
+            <input type="submit" name="submit" value="Post a message">
+        </form>
+            <!-- older message here, underneath -->
+        <!-- post a comment -->
+        <!-- show username timestamp -->
+        <form action="/comment" method="post">
+            <textarea name="comment" rows="8" cols="80"></textarea>
+            <input type="submit" name="submit" value="Post a comment">
+        </form>
+            <!-- older comments here, underneath -->
+        <form action="/logout" method="post">
+            <input type="submit" name="log_out" value="Log out">
+        </form>
+    </body>
+</html>
+
+
+
+<!--
+To flash a message with a different category, just use the second argument to the flash() function:
+
+flash(u'Invalid password provided', 'error')
+Inside the template you then have to tell the get_flashed_messages() function to also return the categories. The loop looks slightly different in that situation then:
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %} -->

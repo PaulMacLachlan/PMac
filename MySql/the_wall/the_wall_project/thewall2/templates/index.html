@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Index/Registration</title>
+    </head>
+    <body>
+        <h1>Welcome to the Wall</h1>
+        <form action="/register" method="post">
+            <legend>Sign Up</legend>
+            <label>First Name:</label><input type="text" name="first_name">
+            <label>Last Name:</label><input type="text" name="last_name">
+            <label>Email:</label><input type="text" name="email">
+            <label>Password:</label><input type="password" name="password">
+            <label>Confirm:</label><input type="password" name="confirm">
+            <input type="submit" name="submit" value="Sign up">
+        </form>
+        <br>
+        <br>
+        <br>
+        <br>
+        <form action="/login" method="post">
+            <legend>Log In</legend>
+            <legend>Log in</legend>
+            <label>Email: </label> <input type="email" name="email">
+            <label>Password: </label> <input type="password" name="password">
+            <input type="submit" name="submit" value="Log in">
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <ul class=flashes>
+                {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% endwith %}
+    </body>
+</html>
+
+
+
+<!--
+To flash a message with a different category, just use the second argument to the flash() function:
+
+flash(u'Invalid password provided', 'error')
+Inside the template you then have to tell the get_flashed_messages() function to also return the categories. The loop looks slightly different in that situation then:
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %} -->
