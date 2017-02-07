@@ -4,6 +4,7 @@ from flask_bcrypt import Bcrypt
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
 mysql = MySQLConnector(app, 'wall_2_database')
+app.secret_key = "SECRETtopsecret"
 
 @app.route('/')
 def index():
@@ -21,6 +22,7 @@ def register():
     insert_query = "INSERT INTO users (first_name, last_name, email, password, confirm, created_at, updated_at) VALUES (:first_name, :last_name, :email, :password, :confirm, NOW(), NOW())"
     query_data = { 'first_name': first_name, 'last_name': last_name, 'email': email, 'password': password, 'confirm': confirm }
     mysql.query_db(insert_query, query_data)
+    flash('passwords do not match!', 'errors')
     return render_template('wall.html')
 
 # route for only signing in
