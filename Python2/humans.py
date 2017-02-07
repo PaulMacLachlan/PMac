@@ -23,3 +23,5 @@ class Human(object):
       self.health -= self.strength
       print "attack failed"
       return False
+michael = Human('CodingDojo')
+jimmy = Human('CodingNinjas')
