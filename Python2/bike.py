@@ -66,3 +66,15 @@ def tri_does_it():
 tri_does_it()
 
 # Have the third instance reverse three times and displayInfo().
+
+
+
+
+def ride(self, num):
+        print "Riding {}".format(self.name)
+        self.miles = self.miles + 10
+        if num >= 1:
+            self.miles = self.miles * num
+            return self.miles
+        else:
+            return self.miles
