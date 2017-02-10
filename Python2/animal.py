@@ -12,11 +12,16 @@ class Animal(object):
         print "Were running!"
 
     def displayHealth(self):
-        print "Were printing health info!" + str(self.health)
+        output = 'Were printing health info!' + str(self.health) + '\n'
+        return output
 
 
 # walk, run, and displayHealth.
 
-crow = Animal()
+crow = Animal("Doctor", 50)
 
-crow.walk()displayHealth()
+def myCrow():
+    print "were doing my crow!"
+    crow.walk().displayHealth()
+
+myCrow()

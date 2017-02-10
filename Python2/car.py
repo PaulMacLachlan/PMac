@@ -1,5 +1,5 @@
 class Car(object):
-    def __init__(self, speed, fuel, mileage, price=20000, location='Detroit'):
+    def __init__(self, speed, fuel, mileage, price=20000, location='Detroit'): #cant have default values separated? Seems to err out unless values that are being assigned
         self.speed = 200
         self.fuel = 'empty'
         self.mileage = 32000
@@ -10,18 +10,18 @@ class Car(object):
         # return Car.display_all()
 
     def display_all(self):
-        output = 'Speed: ' + str(self.speed) + '\n'
+        output = 'Speed: ' + str(self.speed) + '\n' # keep adding / concatenating the values
         output += 'Fuel: ' + str(self.fuel) + '\n'
         output += 'Mileage: ' + str(self.mileage) + '\n'
         output += 'Price: ' + str(self.price) + '\n'
         output += 'Location: ' + str(self.location) + '\n'
         output += 'Tax: ' + str(self.tax) + '\n'
-        return output
+        return output # functions to print the final output string
 
 car1 = Car(280, 'Full', 3000, 9999, "California")
-car2 = Car(110, 'full', 0, 22000, "Vacaville")
+car2 = Car(110, 'full', 0, 22000, "Oakland")
 car3 = Car(120, '50%', 10000, 5000, "Seattle")
-car4 = Car(300, 'Full', 5500, 30000, "Denver")
+car4 = Car(300, 'Full', 5500, 30000, "Compton")
 car5 = Car(25, 'Empty', 530, 1999, "Los Angeles")
 car6 = Car(65, '1/4 tank', 420, 3100, "New York")
 
