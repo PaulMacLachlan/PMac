@@ -1,0 +1,14 @@
+ok, so youre talking to your db
+ytoure inserting the correct values on signin
+you are just not Validating them
+
+
+next time, work on validating and encrypting the password. check to see if its in the db first, and if so, route them to the login page.
+
+Once that works, flash an error if its the wrong password data.
+
+once that works check to see if you can log them out.
+
+once that works, start adding messages.
+
+once that works, start adding comments.
