@@ -1,0 +1,294 @@
+* {
+	vertical-align: baseline;
+	font-family: sans-serif;
+	font-style: inherit;
+	border: 0 none;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+}
+#wrapper {
+    width: 900px;
+    height: 860px;
+    background-color: #1D2A30;
+}
+#rightBackground {
+    width: 580px;
+    height: 580px;
+    /*border: 1px solid blue;*/
+    display: inline-block;
+    padding: 40px;
+    margin-left: 15px;
+    background: #2F4C47; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#223438, #2F4C47); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#223438, #2F4C47); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#223438, #2F4C47); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#223438, #2F4C47); /* Standard syntax */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+h1 {
+    color: #E0F0F7;
+    display: inline-block;
+    margin: 15px;
+    font-weight: normal;
+    font-size: 23px;
+}
+h2 {
+    font-family: serif;
+    color: #E0F0F7;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+h3 {
+    font-family: sans-serif;
+    color: #E0F0F7;
+    font-size: 15px;
+    font-weight: bold;
+}
+#AtLogo {
+    float: right;
+    margin: 15px;
+    border: 2px solid #4C5960;
+}
+p {
+    color: #E0F0F7;
+    font-size: 11px;
+    font-weight: 100;
+}
+td {
+    color: #E0F0F7;
+    font-size: 11px;
+    font-weight: 100;
+    border: 1px solid #375955;
+}
+th {
+    color: #E0F0F7;
+    font-size: 13px;
+    font-weight: 100;
+    border: 1px solid #375955;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    background-color: #1C2A2F;
+}
+li {
+    float: left;
+    color: #8CA5AB;
+    font-size: 10px;
+    border-right: 1px solid #37464C;
+}
+ul li p {
+    display: block;
+    width: 100px;
+    color: #8CA5AB;
+    background-color: #1C2A2F;
+    text-align: center;
+    padding: 6px;
+    text-decoration: none;
+    border-right:1px solid #37464C;
+    background: #445D56; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(#394850, #1D2A2F); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#394850, #1D2A2F); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#394850, #1D2A2F); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#394850, #1D2A2F); /* Standard syntax */
+}
+#bannerspace {
+    width: 897px;
+    height: 20px;
+    border: 1px solid black;
+    margin-top: -4px;
+    background: #445D56; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #445D56 , #242E2E); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #445D56, #242E2E); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #445D56, #242E2E); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #445D56 , #242E2E); /* Standard syntax */
+}
+#bannerspace2 {
+    width: 898px;
+    height: 20px;
+    border: 1px solid black;
+    background: #445D56; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #445D56 , #242E2E); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #445D56, #242E2E); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #445D56, #242E2E); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #445D56 , #242E2E); /* Standard syntax */
+    margin-top: -20px;
+}
+#search {
+    border: 1px solid #929194;
+    width: 120px;
+    height: 20px;
+    display: inline-block;
+    /*margin-left: 16px;
+    margin-bottom: 20px;
+    margin-top: -20px;*/
+}
+#searchicon {
+    border: 1px solid #F6EDE0;
+    position: absolute;
+    margin-left: 125px;
+    margin-top: -19px;
+}
+#searchElements {
+    position: absolute;
+    left: 20px;
+    top: 200px;
+}
+#searchElements p {
+    font-size: 10px;
+    font-weight: lighter;
+    color: #93A5A1;
+}
+#sidebar {
+    width: 200px;
+    height: 680px;
+    /*border: 1px dotted red;*/
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+/*#sidebar p {
+    margin: 100px 0px 2px 20px;
+    display: inline-block;
+}*/
+#textarea {
+    /*border: 1px dotted red;*/
+    width: 370px;
+    height: 600px;
+    display: inline-block;
+    margin-right: 40px;
+}
+#divider1, #divider2, #divider3 {
+    width: 370px;
+    height: 5px;
+    border: 1px solid #375955;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#rightmenu {
+    width: 165px;
+    height: 320px;
+    display: inline-block;
+    vertical-align: top;
+}
+#notesArea1 {
+    margin-top: 60px;
+    margin-left: 20px;
+    width: 152px;
+    display: block;
+    /*border: 1px solid #375955;*/
+}
+#notesArea2 {
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 152px;
+    display: block;
+    /*border: 1px solid #375955;*/
+}
+#notesArea3 {
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 152px;
+    display: block;
+    /*border: 1px solid #375955;*/
+}
+#notesArea1 p, #notesArea2 p, #notesArea3 p {
+    width: 140px;
+    border: 1px solid #375955;
+    display: block;
+    padding: 5px;
+    color: #93A5A1;
+    margin-top: -1px;
+    /*margin: auto;*/
+}
+
+#notesArea1 h3, #notesArea2 h3, #notesArea3 h3 {
+    padding: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #93A5A1;
+    border: 1px solid #375955;
+    display: block;
+    background: #34444A; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#34444A, #213438); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#34444A, #213438); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#34444A, #213438); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#34444A, #213438); /* Standard syntax */
+}
+
+#notesarea4, #notesarea5 {
+    position: relative;
+    border: 1px solid #375E5A;
+    width: 160px;
+}
+#notesarea4 h3, #notesarea5 h3 {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    border: 1px solid #375E5A;
+    background-color: #223538;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+#contentimg2png {
+    border: 1px solid #BDC3C6;
+    display: block;
+    margin-top: 40px;
+    margin-left: 5px;
+    margin-bottom: 40px;
+}
+#contentimg1png {
+    border: 1px solid #3C4A50;
+    display: block;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 150px;
+}
+table {
+    border-collapse: collapse;
+    width: 168px;
+    display: block;
+    margin: auto;
+}
+p a {
+    color: #CDE569;
+    text-decoration: none;
+}
+#textarea p {
+    line-height: 1.5;
+    text-align: justify;
+    text-justify: inter-word;
+    font-weight: lighter;
+    font-size: 11px;
+}
+.specialBG {
+    width: 152px;
+    background: #142225; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#142225, #324E49); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#142225, #324E49); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#142225, #324E49); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#142225, #324E49); /* Standard syntax */
+}
+#wrapper h1 a {
+    color: #BAB6B9;
+    text-decoration: none;
+    font-weight: lighter;
+}
+#menubar {
+    width: auto;
+}
+#menubar ul {
+    display:table;
+    margin: 0 auto;
+    padding: 0;
+}
