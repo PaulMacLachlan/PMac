@@ -1,5 +1,6 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
+from django.template import RequestContext
 
 # Create your views here.
 #initial view, for /index.html, with the 'context' object and timestamp for getting the current time (in UTC for the moment:
@@ -18,3 +19,16 @@ def show(request):
     # "somekey":"somevalue"
     # }
     return render(request, 'timedisplay/show.html')
+
+
+
+def create(request):
+    request.session['name'] = request.POST['first_name']
+    if request.method == "POST":
+        print "*"*50
+        print request.POST
+        print request.method
+        print "*"*50
+        return redirect("/")
+    else:
+        return redirect("/")

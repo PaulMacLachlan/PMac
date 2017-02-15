@@ -19,5 +19,9 @@
             <h1>{{date}}</h1>
             <h1>{{time}}</h1>
         </div>
+        <form action="/show" method = 'post'>{% csrf_token %}
+            <input type="text" name="first_name">
+            <input type="submit" value="submit">
+        </form>
     </body>
 </html>
