@@ -2,14 +2,20 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>Time Display</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
         <h1>Current Time and Date:</h1>
-        <div class="line"><span class="text html basic"><span>
+        <!-- <div class="line"><span class="text html basic"><span>
             {% for key in context %}
             <h1> {{context.timetest}} </h1>
             {% endfor %}
-        </span></span></div>
+        </span></span></div> -->
+        <div class="time_date">
+            <h1>{{date}}</h1>
+            <h1>{{time}}</h1>
+        </div>
     </body>
 </html>
