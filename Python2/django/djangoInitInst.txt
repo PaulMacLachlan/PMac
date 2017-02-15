@@ -9,3 +9,5 @@
 (djangoEnv) paulmaclachlan@MBA apps (master)*$ cd ../
 (djangoEnv) paulmaclachlan@MBA time_display_assignment (master)*$ atom .
 (djangoEnv) paulmaclachlan@MBA time_display_assignment (master)*$ 
+
+4. AFTER ALL FILES ARE IN PLACE: (djangoEnv) paulmaclachlan@MBA time_display_assignment (master)*$ python manage.py runserver
