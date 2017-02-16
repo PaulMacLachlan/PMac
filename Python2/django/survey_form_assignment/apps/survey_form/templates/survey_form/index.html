@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Survey Form</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- added cheap bootstrap for ugliness -->
+    </head>
+    <body>
+        <h1>Survey Form</h1>
+        <div class="wrapper">
+            <form action="/surveys/process" method="POST">
+                First Name: <input type="text" name="first_name" placeholder="First Name">
+                <br>
+                <br>
+                Dojo Location: <select>
+                    <option value="seattle">Seattle</option>
+                    <option value="los_angeles">Los Angeles</option>
+                    <option value="san_jose">San Jose</option>
+                    <option value="new_york">New York</option>
+                </select>
+                <br>
+                <br>
+                Favorite Language:<select>
+                    <option value="python">Python</option>
+                    <option value="javascript">Javascript</option>
+                    <option value="ruby">Ruby</option>
+                </select>
+                <br>
+                <br>
+                Comment (optional):
+                <br>
+                <textarea name="name" rows="8" cols="80"></textarea>
+                <br>
+                <br>
+                <input type="submit" name="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+</html>
