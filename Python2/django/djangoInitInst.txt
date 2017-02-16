@@ -1,13 +1,12 @@
 1. fire up venv: source *djangoEnv*/bin/activate
-2. create project using django: $ django-admin startproject *time_display_assignment*
+2. create project using django: $ django-admin startproject *PROJECTNAME*
 3. 
-(djangoEnv) paulmaclachlan@MBA django (master)$ cd time_display_assignment/
-(djangoEnv) paulmaclachlan@MBA time_display_assignment (master)$ mkdir apps
-(djangoEnv) paulmaclachlan@MBA time_display_assignment (master)$ cd apps
+(djangoEnv) paulmaclachlan@MBA django (master)$ cd PROJECTNAME/
+(djangoEnv) paulmaclachlan@MBA PROJECTNAME (master)$ mkdir apps
+(djangoEnv) paulmaclachlan@MBA PROJECTNAME (master)$ cd apps
 (djangoEnv) paulmaclachlan@MBA apps (master)$ touch __init__.py
 (djangoEnv) paulmaclachlan@MBA apps (master)*$ python ../manage.py startapp timedisplay
 (djangoEnv) paulmaclachlan@MBA apps (master)*$ cd ../
-(djangoEnv) paulmaclachlan@MBA time_display_assignment (master)*$ atom .
-(djangoEnv) paulmaclachlan@MBA time_display_assignment (master)*$ 
+(djangoEnv) paulmaclachlan@MBA PROJECTNAME (master)*$ atom .
 
-4. AFTER ALL FILES ARE IN PLACE: (djangoEnv) paulmaclachlan@MBA time_display_assignment (master)*$ python manage.py runserver
+4. AFTER ALL FILES ARE IN PLACE: (djangoEnv) paulmaclachlan@MBA PROJECTNAME (master)*$ python manage.py runserver
