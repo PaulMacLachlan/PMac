@@ -10,7 +10,8 @@
     <body>
         <h1>Survey Form</h1>
         <div class="wrapper">
-            <form action="/surveys/process" method="POST">
+            <form action="/process" method="POST">
+            {% csrf_token %}
                 First Name: <input type="text" name="first_name" placeholder="First Name">
                 <br>
                 <br>
