@@ -10,3 +10,45 @@
 (djangoEnv) paulmaclachlan@MBA PROJECTNAME (master)*$ atom .
 
 4. AFTER ALL FILES ARE IN PLACE: (djangoEnv) paulmaclachlan@MBA PROJECTNAME (master)*$ python manage.py runserver
+
+
+
+############################
+
+LIST 2
+1. Creating the project and app
+
+(djangoEnv) paulmaclachlan@MBA PMac (master)$ cd Python2
+(djangoEnv) paulmaclachlan@MBA Python2 (master)$ cd django/
+(djangoEnv) paulmaclachlan@MBA django (master)$ django-admin startproject main2
+(djangoEnv) paulmaclachlan@MBA django (master)*$ cd main2
+(djangoEnv) paulmaclachlan@MBA main2 (master)*$ mkdir apps
+(djangoEnv) paulmaclachlan@MBA main2 (master)*$ cd apps
+(djangoEnv) paulmaclachlan@MBA apps (master)*$ touch __init__.py
+(djangoEnv) paulmaclachlan@MBA apps (master)*$ python ../manage.py startapp second_app
+(djangoEnv) paulmaclachlan@MBA apps (master)*$ cd ../
+(djangoEnv) paulmaclachlan@MBA main2 (master)*$ ls
+apps            main2           manage.py
+(djangoEnv) paulmaclachlan@MBA main2 (master)*$ atom .
+(djangoEnv) paulmaclachlan@MBA main2 (master)*$ 
+
+2. 
+NEXT, in `main2` dir, in `settings.py` add `second_app` to INSTALLED_APPS
+
+3. 
+in `main2/urls.py` in `urlpatterns`, create a pattern for "localhost" by removing the `/admin` pattern and adding in one for `url(r'^', include('apps.second_app.urls')),`
+
+4.
+within the `second_app` dir, create `urls.py` and paste in the data from `main2/urls.py`, deleting the import of `include` part, adding `from . import views`, and adding a `$` to the regex, as well as `views.index`.
+
+5. 
+In the same dir, in `views.py`, we define our `index`route, that renders our index.html, as well as, if needed, our context dict, a keyword argument.
+
+6.
+Within `second_app` (app folder, not project folder) create a `templates` folder, as well as another `second_app` dir. `/templates` will house all of our html files.
+
+7.
+Within `index.html` we can use `{{}}` to print the values of the `context` object we created earlier, like this: `{{email}} and {{name}}` within the body tags.
+
+8. 
+we can start the server (from within the `main2` dir, where `manage.py` lives by running $`python manage.py runserver`
