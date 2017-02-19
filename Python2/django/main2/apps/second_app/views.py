@@ -7,4 +7,13 @@ def index(request):
         "email": "blob@gmail.com",
         "name": "mike"
     }
+    print context
     return render(request, "second_app/index.html", context)
+
+
+def show(request, id):
+    context = {
+        "id": id
+    }
+    print context
+    return render(request, "second_app/show.html", context)

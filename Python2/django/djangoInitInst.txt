@@ -51,4 +51,33 @@ Within `second_app` (app folder, not project folder) create a `templates` folder
 Within `index.html` we can use `{{}}` to print the values of the `context` object we created earlier, like this: `{{email}} and {{name}}` within the body tags.
 
 8. 
-we can start the server (from within the `main2` dir, where `manage.py` lives by running $`python manage.py runserver`
+we can start the server (from within the `main2` dir, where `manage.py` lives by running $`python manage.py runserver`. In our index.html, this now displays "Hello World!" as well as the 2 variables in the `context` object! :)
+
+9. 
+TO RENDER OTHE RPAGES, SPECIFICALLY WITH `<id>`'s in them:
+	`url(r'^users/(?P<id>\d+)$', views.show)` or similar needs to be added to the `urlpatterns` list in `second_app/urls.py`
+10.
+This requires a corresponding route in `views.py` for `show`:
+
+	def show(request, id):
+    context = {
+        "id": id
+    }
+    print context
+    return render(request, "second_app/show.html", context)
+    
+Note: this is taking in a keyword argument of `id` thats passed into the `context` object and stored as `"id"`
+
+11.
+Next, within the top level `static_app` directory, we'll create a `static` folder, and within that folder, another `second_app` folder, with corresponding css, images and js folders, depending on the type of files we want to add.
+
+12. 
+We have to allow for these files to be called out from out `index.html` (in this case) so script references must be made to them there:
+in Django, we do this in the head tags, like this:
+	`{% load staticfiles %}`
+    	    `<script src="{% static 'second_app/js/main.js' %}" charset="utf-8"></script>`
+    	    
+Note how within the script src, django knows to dig into the `static` directory, and from there we call out the file that should be referenced, our `main.js` in this instance.
+
+
+
