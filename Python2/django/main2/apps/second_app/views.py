@@ -8,9 +8,11 @@ def index(request):
         "email": "fakeassemail@gmail.com",
         "name": "paul"
     }
+    People.objects.create(first_name="Paul",last_name="MacLachlan")
+    people = People.objects.all()
+    print people, "<-- People"
     print context
-    return render(request, "second_app/index.html", context)
-
+    return render(request,"second_app/index.html", context, People)
 
 def show(request, id):
     context = {
@@ -18,10 +20,3 @@ def show(request, id):
     }
     print context
     return render(request, "second_app/show.html", context)
-
-
-#####
-def index(request):
-    People.objects.create(first_name="Paul",last_name="MacLachlan")
-    people = Peopel.objects.all()
-    print Peoplereturn render(request,"second_app/index.html")

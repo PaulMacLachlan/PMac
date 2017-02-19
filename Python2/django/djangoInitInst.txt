@@ -80,7 +80,7 @@ in Django, we do this in the head tags, like this:
 Note how within the script src, django knows to dig into the `static` directory, and from there we call out the file that should be referenced, our `main.js` in this instance.
 
 13.
-ADDING THE DATABASE (db):
+ADDING THE DATABASE (db) (using Sqlite3):
 
 In `models.py`:
 
