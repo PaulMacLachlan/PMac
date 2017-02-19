@@ -79,5 +79,27 @@ in Django, we do this in the head tags, like this:
     	    
 Note how within the script src, django knows to dig into the `static` directory, and from there we call out the file that should be referenced, our `main.js` in this instance.
 
+13.
+ADDING THE DATABASE (db):
 
+In `models.py`:
+
+	class People(models.Model):
+    first_name = models.CharField(max_length=38)
+    last_name = models.CharField(max_length=38)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+######### and in the server, to make migrations:
+
+(djangoEnv) paulmaclachlan@MBA main2 (master)*$ python manage.pyakemigrations
+Migrations for 'second_app':
+  apps/second_app/migrations/0001_initial.py:
+    - Create model People
+(djangoEnv) paulmaclachlan@MBA main2 (master)*$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, second_app, sessions
+Running migrations:
+  Applying second_app.0001_initial... OK
+(djangoEnv) paulmaclachlan@MBA main2 (master)*$ 
 
