@@ -3,8 +3,22 @@
     <head>
         <meta charset="utf-8">
         <title>Add a student to all bootcamp courses</title>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
+        <!-- {{request.session.course_name}} -->
         <h1>Add a new course</h1>
+        <form class="" action="process" method="post">
+            {% csrf_token %}
+            Name:<input type="text" name="name" placeholder="Course name">
+            <br>
+            Description: <br> <textarea name="description" rows="8" cols="80" placeholder="Please describe your course"></textarea>
+            <br>
+            <input type="submit" name="submit" value="Add">
+        </form>
+        <h1>Courses</h1>
+        {% for thing in things %}
+        <p>{{ thing }}</p>
+        {% endfor%}
     </body>
 </html>
