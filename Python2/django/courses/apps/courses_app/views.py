@@ -1,6 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 
-from .models import Course
+from .models import Course, Description
 
 def index(request):
     #initial route, should display the form, take input from that form, and display the existing courses in the table below.
@@ -20,14 +20,23 @@ def index(request):
 
 
 def create_course(request):
-    #if request is POST, create a course
+    #if the request is POST, create a course entry in the db
     context = {
     'courses': Course.objects.all(),
     'description': Course.objects.all(),
     }
     if request.method == "POST":
-        Course.objects.create_course(request.POST['course_name'])
-        Description.objects.add_description(request.POST['description'])
+        print "were in the create_course method!"
+        print("$"*20)
+        Course.objects.create(course_name=request.POST['course_name'])
+        Description.objects.description(description=request.POST['description'])
+        print("$"*20, "^Heres the creation steps!")
+        print request.POST
+        print("$"*20)
+        print context, "<<< CONTEXT"
+        print("$"*20)
+        print (Course.objects.all())
+        print("$"*20)
         return render(request, "index.html", context)
     else:
         return redirect('/')
