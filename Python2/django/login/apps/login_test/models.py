@@ -16,15 +16,16 @@ class User(models.Model):
 
 
 class UserManager(models.Manager):
-    def login(self, postData):
+    def login(self, email, password):
         print "Running a login function!"
         print "If successful login occurs, maybe return {'theuser':user} where user is a user object?"
         print "If unsuccessful, maybe return { 'errors':['Login unsuccessful'] }"
-        pass
-    def register(self, postData):
-        print ("Register a user here")
-        print ("If successful, maybe return {'theuser':user} where user is a user object?")
-        print ("If unsuccessful do something like this? return {'errors':['User first name to short', 'Last name too short'] ")
+        return "I will be a future login method"
+        
+    def register(self, **kwargs):
+        print "Register a user here"
+        print "If successful, maybe return {'theuser':user} where user is a user object?"
+        print "If unsuccessful do something like this? return {'errors':['User first name to short', 'Last name too short'] "
         pass
 
 class User(models.Model):
@@ -37,5 +38,7 @@ class User(models.Model):
     # *************************
     # Connect an instance of UserManager to our User model overwriting
     # the old hidden objects key with a new one with extra properties!!!
-    objects = UserManager()
+    userManager = UserManager()
+    # objects = UserManager()
+
     # *************************
