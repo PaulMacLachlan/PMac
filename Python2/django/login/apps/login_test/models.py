@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.core.validators import validate_email
-from bcrypt import hashpw, checkpw, gensalt
+from bcrypt import bcrypt, hashpw, checkpw, gensalt
 # Create your models here.
 
 class User(models.Model):
@@ -34,12 +34,13 @@ class UserManager(models.Manager):
             return False
 
         else:
+            print ("-"*10),"completed a login function!"
             return user[0]
 
         # print "If successful login occurs, maybe return {'theuser':user} where user is a user object?"
         # print "If unsuccessful, maybe return { 'errors':['Login unsuccessful'] }"
 
-    def register(self, **kwargs):
+    def register(self, postData):
         #LOGIC FOR REGISTRATION
         print ("-"*10),"Running a registration function!"
         #errors list of errors, as they occur, to be returned as needed
@@ -67,11 +68,7 @@ class UserManager(models.Manager):
         if postData['confirm'] != postData['password']:
             errors.append("Passwords do not match.")
 
-        print "Register a user here"
-        print "If successful, maybe return {'theuser':user} where user is a user object?"
-        print "If unsuccessful do something like this? return {'errors':['User first name to short', 'Last name too short'] "
-
-        if not errors:
+            if not errors:
             #If no errors, complete the registration process:
             #hash the password:
             hashed = bcrypt.hashpw(postData['password'].encode('utf-8'), bcrypt.gensalt(14))
@@ -81,6 +78,7 @@ class UserManager(models.Manager):
                 email = postData['email'],
                 password = hashed
             )
+        print ("-"*10),"completed a registration function!"
         if errors:
             return (render, redirect("index.html"))
         # pass
@@ -91,11 +89,14 @@ class UserManager(models.Manager):
             del session['user_id']
         except KeyError:
             pass
+        print ("-"*10),"completed a logout function!"
         return True
+
 
 class User(models.Model):
     first_name = models.CharField(max_length=45)
     last_name = models.CharField(max_length=45)
+    email = models.CharField(max_length=30, default="blank@example.com")
     password = models.CharField(max_length=16)
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
