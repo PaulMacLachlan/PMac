@@ -8,25 +8,39 @@
         </style>
     </head>
     <body>
+        {% if messages %}
+        {% for message in messages %}
+        <p> {% if message.tags %} class="{{ message.tags }}" {% endif %} {{ message }}</p>
+        {% endfor %}
+        {% endif %}
+        {% if request.session.is_logged %}
+			<a href="/logout">Log out</a>
+		{% else %}
         <h1>Registration</h1>
-        <form class="" action="index.html" method="post">
+        <form class="" action="/register" method="post">
+            {% csrf_token %}
             <label>First Name:</label><input type="text" name="first_name" value="">
             <br>
             <label>Last Name:</label><input type="text" name="last_name" value="">
             <br>
             <label>Email:</label><input type="text" name="email" value="">
             <br>
-            <label>Password:</label><input type="text" name="password" value="">
+            <label>Password:</label><input type="password" name="password" maxlength="16">
             <br>
-            <label>Confirm:</label><input type="text" name="confirm" value="">
+            <label>Confirm:</label><input type="password" name="confirm" maxlength="16">
             <input type="submit" name="submit" value="Register">
         </form>
         <h1>Login</h1>
-        <form class="" action="index.html" method="post">
+        <form class="" action="/login" method="post">
+            {% csrf_token %}
             <label>Email:</label><input type="text" name="email" value="">
             <br>
             <label>Password:</label><input type="text" name="password" value="">
             <input type="submit" name="submit" value="Login">
         </form>
+        {% endif %}
+        {% for user in users %}
+        <h3>{{user.first_name}} {{user.last_name}} {{user.email}}</h3>
+        {% endfor%}
     </body>
 </html>
