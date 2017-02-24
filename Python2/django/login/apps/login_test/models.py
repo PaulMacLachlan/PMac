@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.core.validators import validate_email
-from bcrypt import bcrypt, hashpw, checkpw, gensalt
+from bcrypt import hashpw, checkpw, gensalt
 # Create your models here.
 
 class User(models.Model):
@@ -13,7 +13,7 @@ class User(models.Model):
 
 # """
 # models come with a hidden key:
-#       objects = models.Manager()
+#       objects = models.Manager()The Magic Flute
 # we are going to overwrite this!
 # """
 
@@ -26,7 +26,7 @@ class UserManager(models.Manager):
         errors = []
 
         #check if email exists, if not throw error
-        user = User.userManager.filter(email=str(postData['email']))
+        user = User.objects.filter(email=str(postData['email']))
 
         #check pre hashed PW:
         # if bcrypt.hashpw(password, hashed) == hashed:
@@ -35,7 +35,7 @@ class UserManager(models.Manager):
 
         else:
             print ("-"*10),"completed a login function!"
-            return user[0]
+            return user
 
         # print "If successful login occurs, maybe return {'theuser':user} where user is a user object?"
         # print "If unsuccessful, maybe return { 'errors':['Login unsuccessful'] }"
@@ -61,26 +61,28 @@ class UserManager(models.Manager):
             errors.append("Email is not valid")
 
         #TEST password length
-        if len(postData['password']) < 8 or len(postData['password']) > 16:
-            errors.append("Passwords must be at least 8 characters and no more than 16 characters.")
+        if len(postData['password']) < 8 or len(postData['password']) > 32:
+            errors.append("Passwords must be at least 8 characters and no more than 32 characters.")
 
         #TEST password matches confirm
         if postData['confirm'] != postData['password']:
             errors.append("Passwords do not match.")
 
-            if not errors:
+        # if there are errors present, redirect and dislpay the errors in messages
+        if errors:
+            return (False, errors)
+
+        else:
             #If no errors, complete the registration process:
             #hash the password:
-            hashed = bcrypt.hashpw(postData['password'].encode('utf-8'), bcrypt.gensalt(14))
-            user = User.userManager.create(
-                first_name = postData['first_name'],
-                last_name = postData['last_name'],
-                email = postData['email'],
-                password = hashed
-            )
+                hashed = hashpw(postData['password'].encode('utf-8'), gensalt(14))
+                user = User.objects.create(
+                    first_name = postData['first_name'],
+                    last_name = postData['last_name'],
+                    email = postData['email'],
+                    password = hashed
+                )
         print ("-"*10),"completed a registration function!"
-        if errors:
-            return (render, redirect("index.html"))
         # pass
 
     def logout(self, session):
@@ -104,7 +106,7 @@ class User(models.Model):
     # *************************
     # Connect an instance of UserManager to our User model overwriting
     # the old hidden objects key with a new one with extra properties!!!
-    userManager = UserManager()
+    objects = UserManager()
     # objects = UserManager()
 
     # *************************

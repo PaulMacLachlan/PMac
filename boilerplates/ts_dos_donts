@@ -1,0 +1,49 @@
+Below, I have created an "outline" of sorts to describe how to ask a question in an efficient and effective manner as well as some general rules about what you should and should NOT try before asking.
+I. The analysis stage.
+    At this point, you are now having something that is not working the way you want in your code.  There are three things that need to be clearly defined before you proceed:
+    
+    a. What it is that you expect the code to do.
+        A brief explanation on what the overall piece of code should do is fine.
+        
+    b. What it is that the code is doing.
+        Error messages and/or an explanation on how it is NOT doing what you described in (I:a).
+        
+    c. What part of the code you suspect and why.
+        Try to deduce the last thing/code section/statement you changed that broke it (HINT: Determining this step shouldn't really be a problem if you're properly coding.  If you're changing more than one thing at a time and not stopping to test whether they actually work or not, that IS a problem.).
+            
+            i. If the above is true, stop changing more than one thing at a time.  As a temporary 'remedy' to this, you can comment out things in a relatively reverse order than you remember adding them.  This will attempt to "unbreak" your code by commenting things out one line at a time, until you find that your code works again (similar to backtracking when you've lost your keys/wallet/etc.).  Just like the above: ONE LINE AT A TIME.
+            
+II.  The research stage.
+    By now, you should have a pretty solid idea of the statement(s) that are not functioning the way you want.  I would now suggest checking the following resources in order:
+    
+    a. Documentation.
+        Documentation is king, and often will show a correct usage example of your statement.  Compare/Contrast the two to see if you can find any differences (and if there are, assessing why would be very important [and might also solve your issue]).
+        
+    b.  An example of how to use the statement (FOR SYNTAX ONLY) [Stack Overflow].
+        Be careful here, otherwise you will just end up copy-pasting peoples' code without understanding, the idea is to make sure your SYNTAX/FORM is right (EG: Function calling, spelling, perhaps the name of the parameter(s), etc.).
+        
+    c. Interpreter message (optional based on type of error).
+        If this is an error with an interpreter message, Googling the error message itself and attempting to understand what the interpreter is saying.  For example: NameError: 'blah' is not recognized in the global scope.  Meaning that I have some variable named blah that hasn't been set by the time this line tries to evaluate it.  When you do this, try to look for the ERROR MESSAGE'S meaning, NOT an example of your code.
+        
+        
+    
+III.  The question stage.
+    By now, there should be no noticeable differences (syntactically) between your code and the documentation/examples/etc.  There should also be a general idea of what the issue might/might not be, and where the issue is coming from (general, not exact).
+    
+    Below are the parts of the question that should be presented in linear order (top first to bottom last).
+    
+    a. The code (Github link).
+        Not only does this get you used to interacting with git, it also prevents: spamming of chat channels with snippets everywhere, DM'ing (so others can also learn from the issue), us having to put back together the many snippets that may belong to this project and changing all the linkings/etc (This gets difficult when you have a larger project), and us missing any data we might need (say, if you suspected the wrong part of the code).
+        
+    b. The goal.
+        What you want your code to do.
+    
+    c. The problem itself.
+        What your code is not doing compared to your goal.
+        
+    d. The error message(s) if any.
+        One error at a time, separated clearly.
+        
+    e. Your suspicion on what part of the code is causing it and why.
+        I do not think any of you (our students) are lacking in effort (especially when it comes to diagnosing their own code); however, it is extremely important to learn how to communicate effectively in the development world.  This accomplishes two things:  it allows you express what you think is wrong and why, as well as learning/picking up on technical terms/descriptions.
+    

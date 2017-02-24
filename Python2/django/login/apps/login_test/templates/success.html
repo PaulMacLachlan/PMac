@@ -2,23 +2,37 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Login and Reg | Success</title>
+        <title>Login & Reg | Success</title>
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
         <style media="screen">
+            .green {
+                background-color: #39FF3C;
+            }
         </style>
     </head>
     <body>
-        <h1>Success!</h1>
-        <h1>Welcome, {{ user.first_name }}</h1>
         {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li {% if message.tags %} class="{{message.tags}}" {% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
+        {% for message in messages %}
+        <p class="green">{{ message }}</p>
+        {% endfor %}
         {% endif %}
-        <p>(PLACEHOLDER: Successfully registered (or logged in)!)</p>
+        <h1>Success!</h1>
+        <h1>Welcome, </h1>
+        <!-- {% for name in userName %} -->
+        {% if userName %}
+        <h1>{{ userName }}</h1>
+        {% endif %}
+        <!-- {% endfor %} -->
+        <!-- <p>(PLACEHOLDER: Successfully registered (or logged in)!)</p> -->
         <br>
-        <input type="submit" name="/logout" value="Log out">
+        <form class="" action="/logout" method="post">
+            {% csrf_token %}
+            <input type="submit" name="logout" value="Log out">
+        </form>
+        <!-- <button type="button" name="/logout">Log Out</button> -->
+        <!-- {% if request.session.is_logged %} -->
+			<!-- <a href="/logout">Log out</a> -->
+		<!-- {% else %} -->
+        <!-- {% endif %} -->
     </body>
 </html>
