@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     url(r'^create$', views.create_course),
+    url(r'^course/(?P<id>[0-9]+)/destroy$', views.destroy, name='courses-destroy'),
     # url(r'^confirm_delete$', views.confirm_delete),
     # url(r'^no_delete$', views.no_delete),
     # url(r'^yes_delete$', views.yes_delete),

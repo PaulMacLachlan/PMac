@@ -6,6 +6,8 @@ def index(request):
     #initial route, should display the form, take input from that form, and display the existing courses in the table below.
     context = {
     'courses': Course.objects.all(),
+    'descriptions': Description.objects.all(),
+    # 'timestamps': Course.objects.all()
     }
     print "This is the index Route!"
     return render(request, "index.html", context)
@@ -23,13 +25,14 @@ def create_course(request):
     #if the request is POST, create a course entry in the db
     context = {
     'courses': Course.objects.all(),
-    'description': Course.objects.all(),
+    'description': Description.objects.all(),
+    # 'created': Course.objects.created_at(),
     }
     if request.method == "POST":
         print "were in the create_course method!"
         print("$"*20)
         Course.objects.create(course_name=request.POST['course_name'])
-        Description.objects.description(description=request.POST['description'])
+        Description.objects.create(description=request.POST['description'])
         print("$"*20, "^Heres the creation steps!")
         print request.POST
         print("$"*20)
@@ -40,6 +43,14 @@ def create_course(request):
         return render(request, "index.html", context)
     else:
         return redirect('/')
+
+
+def destroy(request, id):
+        #  contains Course with primary key = id
+    context = {
+        'course': Course.objects.get(pk=id)
+    }
+    return render(request, 'destroy.html', context)
 
 #
 # def confirm_delete(request):
