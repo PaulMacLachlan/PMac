@@ -14,9 +14,15 @@
         {% if messages %}
         {% for message in messages %}
         <!-- <p> {% if message.tags %} class="{{ message.tags }}" {% endif %} {{ message }}</p> -->
-        <p class="red">{{ message }}</p>
+        <p class="red"> {{ message }}</p>
         {% endfor %}
         {% endif %}
+
+        <!-- {% if messages %}
+        {% for message in messages %}
+        <p class="green">{{ message }}</p>
+        {% endfor %}
+        {% endif %} -->
 
         <!-- {% for field in form %}
         <div class="fieldWrapper">

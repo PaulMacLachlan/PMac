@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Delete a course</title>
+    </head>
+    <body>
+        <h1>Are you sure you want to delete the following course?</h1>
+        <p>Name: placeholder="Course name"></p>
+        <br>
+        <p>Description: placeholder="Please describe your course"></p>
+        <form class="" action="confirm_delete" method="post">
+            {% csrf_token %}
+            <input type="submit" name="yes_delete" value="Yes! I want to delete this">
+            <input type="submit" name="no_delete" value="No">
+        </form>
+    </body>
+</html>

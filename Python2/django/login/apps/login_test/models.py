@@ -35,7 +35,7 @@ class UserManager(models.Manager):
 
         else:
             print ("-"*10),"completed a login function!"
-            return user
+            return user[0]
 
         # print "If successful login occurs, maybe return {'theuser':user} where user is a user object?"
         # print "If unsuccessful, maybe return { 'errors':['Login unsuccessful'] }"
@@ -75,20 +75,23 @@ class UserManager(models.Manager):
         else:
             #If no errors, complete the registration process:
             #hash the password:
-                hashed = hashpw(postData['password'].encode('utf-8'), gensalt(14))
-                user = User.objects.create(
-                    first_name = postData['first_name'],
-                    last_name = postData['last_name'],
-                    email = postData['email'],
-                    password = hashed
-                )
-        print ("-"*10),"completed a registration function!"
+            hashed = hashpw(postData['password'].encode('utf-8'), gensalt(14))
+            user = User.objects.create(
+                first_name = postData['first_name'],
+                last_name = postData['last_name'],
+                email = postData['email'],
+                password = hashed
+            )
+            print ("-"*10),"completed a registration function!"
+            return (True, user)
+
         # pass
 
     def logout(self, session):
         try:
             del session['is_logged']
             del session['user_id']
+            del session['first_name']
         except KeyError:
             pass
         print ("-"*10),"completed a logout function!"
