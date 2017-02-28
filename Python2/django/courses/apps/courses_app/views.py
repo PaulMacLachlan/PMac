@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 
+from django.contrib import messages
+
 from .models import Course, Description
 
 def index(request):
@@ -30,16 +32,16 @@ def create_course(request):
     }
     if request.method == "POST":
         print "were in the create_course method!"
-        print("$"*20)
+        print("-"*20)
         Course.objects.create(course_name=request.POST['course_name'])
         Description.objects.create(description=request.POST['description'])
-        print("$"*20, "^Heres the creation steps!")
+        print("-"*20, "^Heres the creation steps!")
         print request.POST
-        print("$"*20)
+        print("-"*20)
         print context, "<<< CONTEXT"
-        print("$"*20)
+        print("-"*20)
         print (Course.objects.all())
-        print("$"*20)
+        print("-"*20)
         return render(request, "index.html", context)
     else:
         return redirect('/')
@@ -57,6 +59,20 @@ def destroy(request, id):
 #     print "NAME OF ENTRY WE WANT TO DELETE BASED ON NUMERIC ID TIED TO REMOVE BUTTON"
 #     print "DESCRIPTION FORM SAME ITEM"
 #     return render(request, "destroy.html")
+
+def destroy_confirm(request, id):
+    if request.method == 'POST':
+        course = Course.objects.get(pk=id)
+        # description = Description.objects.get(pk=id)
+        course.delete()
+        # description.delete()
+        # pass
+        messages.add_message(request, messages.SUCCESS, 'Course {} was removed'.format(course.course_name))
+    else:
+        messages.add_message(request, message.ERROR, 'There was an error, please try again.')
+        # pass
+
+    return redirect('/')
 #
 # def no_delete(request):
 #     return redirect('/')
