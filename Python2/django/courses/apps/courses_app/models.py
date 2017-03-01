@@ -19,8 +19,6 @@ class Course(models.Model):
     course_name = models.CharField(max_length=40)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    # password = models.CharField(max_length=255, default = 'NULL_NOT_A_PASSWORD')
-
     objects = CourseManager()
 
     def __str__(self):
@@ -30,7 +28,6 @@ class Description(models.Model):
     description = models.TextField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
     objects = CourseManager()
 
     def __str__(self):
