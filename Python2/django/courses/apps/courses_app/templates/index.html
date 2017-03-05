@@ -47,7 +47,7 @@
                 {% for course in courses %}
                 <tr>
                     <td>{{ course.course_name }}</td>
-                    <td>{{ descriptions.descriptions }}</td>
+                    <td>{{ description.description }}</td>
                     <td>{{ course.created_at }}</td>
                     <td> <a href="/course/{{course.pk}}/destroy">remove</a></td>
                 </tr>
